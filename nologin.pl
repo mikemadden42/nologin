@@ -1,22 +1,21 @@
 #!/usr/bin/env perl
 
-use 5.016;
+use 5.010;
 use autodie;
 use strict;
 use warnings;
 
-open( fh, '<', '/etc/passwd' ) or die "Cannot open file: $!";
+open( my $fh, '<', '/etc/passwd' ) or die "Cannot open file: $!";
 
-while (<fh>) {
+my $NOLOGIN = "/sbin/nologin";
+
+while (<$fh>) {
     chomp;
-
     next if /^#/;
-
     my @acct_data = split(':');
-
-    if ( $acct_data[6] ne '/bin/sh' ) {
+    if ( $acct_data[6] eq $NOLOGIN ) {
         say $acct_data[0];
     }
 }
 
-close fh;
+close $fh;
