@@ -9,6 +9,12 @@ With `--locked`, accounts that are locked (`passwd -l`, or a `*`/`!!`
 password) or expired (`chage -E`) in the shadow file are listed too, even if
 they have a normal shell.
 
+## Install
+
+Download a binary for Linux (x86_64 or arm64, statically linked) or macOS from
+the [releases page](https://github.com/mikemadden42/nologin/releases), or
+build from source.
+
 ## Build
 
     cargo build --release
@@ -34,3 +40,7 @@ shadow file, so use `--shadow` with a file there or run it on Linux.
 ## Test
 
     cargo test
+
+## License
+
+MIT; see [LICENSE](LICENSE).
