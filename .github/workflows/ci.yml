@@ -20,3 +20,6 @@ jobs:
       - run: cargo test
       - run: cargo run -- /etc/passwd
       - run: cargo run
+      - run: cargo run -- --help
+      - if: runner.os == 'Linux'
+        run: cargo build && sudo target/debug/nologin --locked
