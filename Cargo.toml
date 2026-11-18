@@ -3,6 +3,9 @@ name = "nologin"
 version = "0.2.0"
 edition = "2024"
 rust-version = "1.85"
+description = "List accounts with a nologin shell, or locked or expired in the shadow file"
+license = "MIT"
+repository = "https://github.com/mikemadden42/nologin"
 
 [dependencies]
 libc = "0.2"
